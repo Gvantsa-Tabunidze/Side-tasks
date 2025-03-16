@@ -141,27 +141,36 @@ const uniqueValues = [...new Set(arrayNames)];
 
 console.log(uniqueValues);
 
+
+// Task 21Find the most frequent element in an array. 
+const colors = ["red", "blue", "red", "green", "blue", "blue"]
+const repeat = ()=>{
+
+}
+
+
 // Task22
-// const address = {
-//   country: 'usa',
-//   city: 'atlanta',
-//   street: 'st.peter avenue #5',
-// };
+const address = {
+  country: 'usa',
+  city: 'atlanta',
+  street: 'st.peter avenue #5',
+};
 
-// const address2 ={}
-// const createObj =(item) =>{
-//     address2[item] =address[item]
-//     if(address2[item] !== null && typeof address2[item] === 'string'){
-//       address2[item].toLocaleUpperCase()
-//     }
-//   }
 
-//   for(let key in address){
-//     createObj(key)
-//   }
+const createObj =(obj) =>{
+  let address2 ={}
+for(let key in obj){
+if(typeof obj[key] === 'string') {
+  address2[key]=obj[key].toUpperCase()
+}
+else { return 'Sorry, no conversion has happened'}
+}
+return address2
+}
+let returnedObj = createObj(address)
+console.log(address)
+console.log(returnedObj )
 
-// console.log(address2)
-// console.log(address)
 
 // Task23 Create a function that checks if two objects have the same properties and values.
 const object1 = { name: 'Andreas', age: 28 };
@@ -179,15 +188,13 @@ const checkObj = (obj1, obj2) => {
   return false;
 };
 
+
 console.log(checkObj(object1, object2));
 
-// Task24 Find if a number is prime or not using a loop.
+// Task24 Find if a number is prime or not, using a loop.
 
 const numberPrime = 13;
 function isPrime(num) {
-  if (num <= 1) {
-    return false;
-  }
 
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
@@ -196,7 +203,7 @@ function isPrime(num) {
   }
   return true;
 }
-console.log(isPrime(15));
+console.log(isPrime(11));
 
 // Task25 Create a multiplication table for a given number using a loop.
 const myNumber = 4;
@@ -204,3 +211,13 @@ const myNumber = 4;
 for (let i = 1; i <= 10; i++) {
   console.log(`${myNumber}*${i}=${myNumber * i}`);
 }
+
+
+// Task 27 
+// Swap two variables using array destructuring.
+const fruits = ['banana', 'mango']
+let [fruit1,  fruit2] = fruits;
+[fruit1, fruit2] = [fruit2, fruit1]
+console.log(fruit1, fruit2)
+
+
