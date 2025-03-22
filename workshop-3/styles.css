@@ -1,0 +1,27 @@
+.dateWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.DateInfo{
+  display: flex;
+  gap: 16px;
+}
+
+.dateResult{
+  margin: 32px 0px 32px 0px;
+}
+
+.error-text{
+  color: red;
+}
+
+li{
+  list-style-type: none;
+}
+
+.output{
+display: flex;
+align-items: center;
+gap: 12px
+}
