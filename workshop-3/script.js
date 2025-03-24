@@ -72,7 +72,6 @@ dateInfo.addEventListener('submit', function (e) {
   let userMonthValue = parseInt(userMonth.value);
   let userYearValue = parseInt(userYear.value);
 
-  let userBirthDate = new Date(userYearValue, userMonthValue - 1, userDayValue);
   let ageYears = currY - userYearValue;
   let ageMonths = currM - userMonthValue;
   let ageDays = currD - userDayValue;
@@ -81,9 +80,9 @@ dateInfo.addEventListener('submit', function (e) {
     ageYears--;
     ageMonths = (ageMonths + 12) % 12;
   }
-  if(ageDays <0){
-    const daysInPreviousMonth = new Date(currY, currM-1, 0).getDate()
-    ageDays = daysInPreviousMonth +ageDays
+  if (ageDays < 0) {
+    const daysInPreviousMonth = new Date(currY, currM - 1, 0).getDate();
+    ageDays = daysInPreviousMonth + ageDays;
   }
 
   function isLeapYear(birthYear) {
@@ -98,12 +97,9 @@ dateInfo.addEventListener('submit', function (e) {
     userDayValue === 29 &&
     !isLeapYear(userYearValue)
   ) {
-  
     console.log('it was not a leap year, enter valid date');
     return;
   }
-
-  
 
   // check day input
   if (!userDay.value) {
@@ -128,30 +124,26 @@ dateInfo.addEventListener('submit', function (e) {
   } else if (userYear.value > currentDate.getFullYear()) {
     errorMesage.year = 'Mast be in the past';
   }
-  // console.log(errorMesage);
 
   for (let key in errorMesage) {
     let errText = document.getElementById('error-' + key);
     errText.innerText = errorMesage[key];
     // console.log(errText);
-    if (errorMesage[key] === '') {
-      console.log('Data submitted, thank you!');
-    }
+    // if (errorMesage[key] === '') {
+    //   console.log('Data submitted, thank you!');
+    // }
   }
 
- 
-  if (userYearValue) {
+  if (userYearValue && userYearValue < currentDate.getFullYear()) {
     const birthYear = document.getElementById('useryear');
     birthYear.innerHTML = `${ageYears} years`;
   }
-  if(userMonthValue){
+  if (userMonthValue && userMonthValue <= 12) {
     const birthMonth = document.getElementById('usermonth');
-    birthMonth.innerHTML = `${ageMonths}`
+    birthMonth.innerHTML = `${ageMonths} months`;
   }
-  if(userDayValue){
+  if (userDayValue <= 31) {
     const birthDay = document.getElementById('userday');
-    birthDay.innerHTML = `${ageDays}`
+    birthDay.innerHTML = `${ageDays} days`;
   }
-
-
 });
