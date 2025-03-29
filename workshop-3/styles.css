@@ -7,11 +7,15 @@
 .dateWrapper{
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .DateInfo{
-  display: flex;
+  display:inline-flex;
   gap: 16px;
+  align-items: center;
+  height: 120px;
+  position: relative;
 }
 
 .dateResult{
@@ -24,6 +28,7 @@
 
 li{
   list-style-type: none;
+
 }
 
 .output{
@@ -54,4 +59,19 @@ p{
 
 li :nth-child(1){
   color: darkmagenta;
+}
+
+.ageBtn{
+  background-color: rgb(44, 0, 86);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  height: 32px;
+  padding-right: 16px;
+  padding-left: 16px;
+  border-radius: 100px;
+  position: absolute;
+  right:-13%;
+  top:30%;
 }
